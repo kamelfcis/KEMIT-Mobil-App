@@ -31,17 +31,7 @@ class _VideoPageState extends State<VideoPage> {
     _initializeVideo();
   }
 
-  Future<void> _registerSurfaceTexture() async {
-    // Ensure the SurfaceTexture is correctly registered before video playback
-    try {
-      final MethodChannel _channel = MethodChannel('flutter.io/video');
-      await _channel.invokeMethod('registerSurfaceTexture');
-      print("Surface Texture registered successfully");
-    } on PlatformException catch (e) {
-      print("Failed to register surface texture: $e");
-    }
-  }
-
+ 
  Future<void> _initializeVideo() async {
   try {
     _controller = VideoPlayerController.network(widget.videoUrl)
