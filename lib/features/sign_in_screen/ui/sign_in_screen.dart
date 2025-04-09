@@ -26,7 +26,7 @@ class SignInScreen extends StatelessWidget {
             left: 45.w,
             top: 100.h,
             child: Text(
-              'KEMIT LOGIN',
+              'FOS7TK LOGIN',
               style: TextStyle(
                 color: const Color.fromARGB(255, 255, 255, 255),
 

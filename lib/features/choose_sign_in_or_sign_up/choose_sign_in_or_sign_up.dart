@@ -27,7 +27,7 @@ class ChooseSignInOrSignUp extends StatelessWidget {
             left: 45.w,
             top: 100.h,
             child: Text(
-              'KEMIT',
+              'FOS7TK',
               style: TextStyle(
                 color: const Color.fromARGB(255, 255, 255, 255),
 

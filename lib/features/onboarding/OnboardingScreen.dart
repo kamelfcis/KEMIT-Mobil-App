@@ -30,7 +30,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   /// **Onboarding Data**
   final List<Map<String, dynamic>> _onboardingData = [
     {
-      "title": "Welcome to My KEMIT",
+      "title": "Welcome to My FOS7TK",
       "description": "Explore the best of Egypt with our smart tour guide.",
       "icon": Icons.map_rounded,
     },
@@ -41,7 +41,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     },
     {
       "title": "Let's Get Started!",
-      "description": "Enjoy your journey with My KEMIT App!",
+      "description": "Enjoy your journey with My FOS7TK App!",
       "icon": Icons.directions_walk_rounded,
     },
   ];

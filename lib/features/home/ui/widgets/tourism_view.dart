@@ -166,7 +166,7 @@ class TourismView extends ConsumerWidget {
   }
 
   String imageUrl(String url) {
-    return "http://massar.somee.com/${url.toString().replaceAll(']', '').replaceAll('[', '')}";
+    return "http://foshetk.somee.com/${url.toString().replaceAll(']', '').replaceAll('[', '')}";
   }
 }
 

@@ -1,6 +1,6 @@
 class ApiConstants {
   // Api BaseUrl
-  static const String baseUrl = 'http://massar.somee.com';
+  static const String baseUrl = 'http://foshetk.somee.com';
 //http://morshed.somee.com
   // Api SignUp EndPoint
   static const String signUp = '/api/Account/register';

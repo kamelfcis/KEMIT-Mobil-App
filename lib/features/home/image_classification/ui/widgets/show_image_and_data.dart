@@ -96,6 +96,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:morshd/features/home/image_classification/controller/image_classifier.dart';
+import 'package:morshd/features/home/video_page.dart';
 
 class ShowImageAndData extends ConsumerStatefulWidget {
   const ShowImageAndData({super.key});
@@ -152,27 +153,57 @@ class _ShowImageAndDataState extends ConsumerState<ShowImageAndData> {
                         ),
                       ],
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        _sectionTitle("Recognized King"),
-                        _styledText(
-                          dataAndImage[index].name,
-                          fontSize: 28,
-                          fontWeight: FontWeight.w900,
-                          color: Color(0xff464A7A),
-                        ),
-                        const SizedBox(height: 16),
-                        _sectionTitle("Description"),
-                        _styledText(
-                          dataAndImage[index].description,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black87,
-                          height: 1.5,
-                        ),
-                      ],
-                    ),
+                   child: Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Align(
+      alignment: Alignment.topRight,
+      child: ElevatedButton.icon(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => VideoPage(
+                token: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJHcm91cE5hbWUiOiJHb2FsIEh1cCIsIlVzZXJOYW1lIjoiR29hbCBIdXAiLCJBY2NvdW50IjoiIiwiU3ViamVjdElEIjoiMTkwOTk3MTU5NjA2NDMzMDA2MCIsIlBob25lIjoiIiwiR3JvdXBJRCI6IjE5MDk5NzE1OTYwNjAxMzU3NTYiLCJQYWdlTmFtZSI6IiIsIk1haWwiOiJnb2FsaHVwN0BnbWFpbC5jb20iLCJDcmVhdGVUaW1lIjoiMjAyNS0wNC0xMCAwMDoyMDowNSIsIlRva2VuVHlwZSI6MSwiaXNzIjoibWluaW1heCJ9.l0IOUA-JGcZrB5LKd6kOwV5gIeuHdkRf75ZBhsRzLShX8Iujegj6T7QDkB5OGJDUqf8rN8zF1gLAFqvZngI-qNxqK87HbKOXhhtYEhYjK8QQvBTow_Qo_Id9QPPld_tuRW7Lewd1zsfBXZH4I9eyheN9WcuZ_vBq7epY6Tkk3V_82JbSe2M_6G1NRFWYXzyGTENuJtQhsWGvEdmxcCW8BKJa8Nvf9uLL4aK55BH3b8vA8oVPDZCiaUkheauF1CcebKx3cgDuzBghkm9dUxGg1RecasRDPPJuElbYZXr1bsIfwJjxpn4OqIVtvOqxA14l3KUJQ90EdXDU0-rFAi8t7w',
+                groupId: '1909971596060135756',
+                videoUrl: "https://public-cdn-video-data-algeng.oss-cn-wulanchabu.aliyuncs.com/inference_output%2Fvideo%2F2025-04-10%2F841e1338-2703-4886-96df-e555d4a96060%2Foutput.mp4?Expires=1744248132&OSSAccessKeyId=LTAI5tAmwsjSaaZVA6cEFAUu&Signature=AkT3qZjnZEND7%2FOgJhoRS%2B%2BwTHM%3D",
+                imageUrl: 'http://foshetk.somee.com/${dataAndImage[index].resultimage}',
+              ),
+            ),
+          );
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Color(0xff464A7A),
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        ),
+        icon: Icon(Icons.play_circle_fill, color: Colors.white),
+        label: Text(
+          "Generate Video",
+          style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+        ),
+      ),
+    ),
+    const SizedBox(height: 16),
+    _sectionTitle("Recognized King"),
+    _styledText(
+      dataAndImage[index].name,
+      fontSize: 28,
+      fontWeight: FontWeight.w900,
+      color: Color(0xff464A7A),
+    ),
+    const SizedBox(height: 16),
+    _sectionTitle("Description"),
+    _styledText(
+      dataAndImage[index].description,
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+      color: Colors.black87,
+      height: 1.5,
+    ),
+  ],
+),
+
                   ),
                   const Gap(10),
                 ],

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'dart:io';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:morshd/features/home/image_classification/data/models/message_and_image_model.dart';
@@ -23,6 +24,7 @@ class ImageClassification extends AsyncNotifier<void> {
 
     try {
       final response = await ref.read(chatBotRepoProvider.future);
+      log(response.toString());
       var result = await response.chatBot(File(image!.path));
       result.when(
         success: (data) {
@@ -30,7 +32,8 @@ class ImageClassification extends AsyncNotifier<void> {
             MessageAndImageModel(
               name: data.name.toString(),
               description: data.description.toString(), // Add description
-              image: File(image!.path),
+              image: File(image!.path), 
+              resultimage: data.resultimage!
             ),
           );
           state = AsyncValue.data(null); // Updating state after success

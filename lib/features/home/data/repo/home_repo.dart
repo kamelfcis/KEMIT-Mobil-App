@@ -72,7 +72,7 @@ class HomeRepo {
       // Initialize Dio and send the request
       Dio dio = await DioFactory.getDio();
       final response = await dio.post(
-        'http://massar.somee.com/api/TourismPlace', // Make sure this URL is correct
+        'http://foshetk.somee.com/api/TourismPlace', // Make sure this URL is correct
         data: data,
       );
 //http://morshed.somee.com/api/TourismPlace

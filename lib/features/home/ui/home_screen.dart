@@ -75,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: const Text(
-                        'KEMIT',
+                        'FOS7TK',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 24,
@@ -139,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Text(
-                  'KEMIT',
+                  'FOS7TK',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 60.sp,

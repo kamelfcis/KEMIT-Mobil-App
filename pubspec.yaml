@@ -63,7 +63,7 @@ dependencies:
   flutter_gemini: ^2.0.3
   dash_chat_2: ^0.0.21
   http: ^1.2.2
-
+  video_player: ^2.2.16
 dev_dependencies: 
   flutter_launcher_icons: ^0.13.1  # Ensure this is the latest version
 

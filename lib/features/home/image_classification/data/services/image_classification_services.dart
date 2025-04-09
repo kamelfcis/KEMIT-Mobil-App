@@ -12,7 +12,7 @@ class ChatBoServices {
 
   Future<ChatBotResponse> chatBot(FormData formData) async {
     final response = await _dio.post(
-      'http://www.massar.somee.com/api/AIPlace/predict',
+      'http://foshetk.somee.com/api/AIPlace/predict',
       data: formData,
     );
     // final data=jsonDecode(response.data) ;

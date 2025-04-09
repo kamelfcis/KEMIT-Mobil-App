@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:morshd/features/home/image_classification/data/models/image_classification_response.dart';
@@ -11,9 +12,9 @@ class ChatBotRepo {
 
   ChatBotRepo(this._chatBoServices);
 
-  Future<ApiResultChat<ChatBotResponse>> chatBot(File image) async {
+  Future<ApiResultChat<ChatBotResponse>> chatBot(File file) async {
     var response = await _chatBoServices.chatBot(FormData.fromMap({
-      "file": await MultipartFile.fromFile(image.path),
+      "file": await MultipartFile.fromFile(file.path,contentType: DioMediaType.parse('image/jpeg')),
     }));
 
     try {
